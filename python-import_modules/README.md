@@ -34,7 +34,7 @@
   * Names starting with `__` are not printed.
 
 * **5. Everything can be imported**
-  * **5-variable_load.py): Python program that imorts the
+  * **5-variable_load.py:** Python program that imorts the
   variable `a` from the file `variable_load_5.py` and prints its value.
 
 
