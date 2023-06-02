@@ -1,6 +1,6 @@
 # Python - if/else, loops, functions
 
-## Function Prototypes :floppy_disk:
+## Function Prototypes
 
 Prototypes for functions written in this project:
 
