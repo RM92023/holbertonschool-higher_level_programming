@@ -2,6 +2,8 @@
 """
 define class called Square
 """
+
+
 class Square:
     def __init__(self):
         """
@@ -12,5 +14,6 @@ class Square:
         """
         Sets the "square" attribute of the Square class to None.
         This attribute is shared by all objects of the class,
-        since you are assigning directly to the class instead of a specific instance.
+        since you are assigning directly to the class instead
+        of a specific instance.
         """
