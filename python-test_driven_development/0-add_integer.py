@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Define the function to be called add_integer"""
+
+
 def add_integer(a, b=98):
     """Add integer"""
     if not isinstance(a, (int, float)):
