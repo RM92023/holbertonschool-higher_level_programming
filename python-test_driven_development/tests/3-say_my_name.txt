@@ -30,3 +30,8 @@ First lastname is not a string
     >>> say_my_name("Bob", None)
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
+First name is not a string
+    >>> say_my_name(None, "Bob")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
