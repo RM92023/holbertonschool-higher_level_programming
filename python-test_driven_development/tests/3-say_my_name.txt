@@ -40,3 +40,8 @@ both attributes must be strings
     >>> say_my_name(12, 24)
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
+First lastname is not a string
+    >>> say_my_name("Bob", ["None", "hello", "world"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
