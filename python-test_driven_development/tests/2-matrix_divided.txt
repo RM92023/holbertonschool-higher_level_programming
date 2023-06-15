@@ -33,7 +33,7 @@ Print Matrix / None
     TypeError: div must be a number
 
 Matrix is a list
-    >>> matrix = "not a list"
-    >>> print(matrix_divided(matrix, 3))
+    >>> matrix = "not a list, is a string"
+    >>> print(matrix_divided(matrix, None))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
