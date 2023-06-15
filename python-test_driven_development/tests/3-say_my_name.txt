@@ -25,3 +25,8 @@ both attributes must be strings
 First name is a string and second name is empty
     >>> say_my_name("Bob")
     My name is Bob
+
+First lastname is not a string
+    >>> say_my_name("Bob", 12)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
