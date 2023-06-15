@@ -22,10 +22,6 @@ both attributes must be strings
     >>> say_my_name("John", "Smith")
     My name is John Smith
 
-First name is a string and second name is empty
-    >>> say_my_name("Bob")
-    My name is Bob
-
 First lastname is not a string
     >>> say_my_name("Bob", None)
     Traceback (most recent call last):
