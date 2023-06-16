@@ -11,18 +11,19 @@ This module defines def say_my_name(first_name, last_name=""):
     >>> text_indentation("Hello. How are you? I'm fine: thanks!")
     Hello.
     How are you?
-
+    <BLANKLINE>
     I'm fine: thanks!
 
 
     >>> text_indentation("This is a test.")
     This is a test.
+    <BLANKLINE>
 
     >>> text_indentation("Another test?: Yes!")
     Another test?
-
+    <BLANKLINE>
     Yes!
-
+    <BLANKLINE>
 
     >>> text_indentation(123)
     Traceback (most recent call last):
@@ -30,7 +31,7 @@ This module defines def say_my_name(first_name, last_name=""):
     TypeError: text must be a string
     >>> text_indentation("   Spaces at the beginning and end.   ")
     Spaces at the beginning and end.
-
+    <BLANKLINE>
 
     >>> text_indentation("          ")
     Similarly, no spaces are printed at the end of each printed line.
