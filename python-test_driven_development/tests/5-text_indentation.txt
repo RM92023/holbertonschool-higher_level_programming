@@ -1,0 +1,28 @@
+===========================
+5-text_indentation.py
+===========================
+
+Using ``5-text_indentation.py``
+----------------------
+This module defines def say_my_name(first_name, last_name=""):
+``first_name must be a string or last_name must be a string``.
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> text_indentation("Hello. How are you? I'm fine: thanks!")
+    Hello.
+    How are you?
+
+    I'm fine: thanks!
+    >>> text_indentation("This is a test.")
+    This is a test.
+
+    >>> text_indentation("Another test?: Yes!")
+    Another test?
+
+    Yes!
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation("   Spaces at the beginning and end.   ")
+    Spaces at the beginning and end.
