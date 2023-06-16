@@ -4,42 +4,27 @@
 
 Using ``5-text_indentation.py``
 ----------------------
-This module defines def say_my_name(first_name, last_name=""):
-``first_name must be a string or last_name must be a string``.
+This module defines def text_indentation(text):
+``text must be a string``.
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-    >>> text_indentation("Hello. How are you? I'm fine: thanks!")
-    Hello.
-    How are you?
-    <BLANKLINE>
-    I'm fine: thanks!
 
-
-    >>> text_indentation("This is a test.")
-    This is a test.
-    <BLANKLINE>
-
-    >>> text_indentation("Another test?: Yes!")
-    Another test?
-    <BLANKLINE>
-    Yes!
-    <BLANKLINE>
-
-    >>> text_indentation(123)
+    >>> text_indentation()
     Traceback (most recent call last):
-        ...
-    TypeError: text must be a string
-    >>> text_indentation("   Spaces at the beginning and end.   ")
-    Spaces at the beginning and end.
-    <BLANKLINE>
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
 
-    >>> text_indentation("          ")
-    Similarly, no spaces are printed at the end of each printed line.
 
-    >>> text_indentation({"one": 1, "two": 2})
+    >>> text_indentation("Smith")
+    Smith
+
+
+    >>> text_indentation(9)
     Traceback (most recent call last):
     TypeError: text must be a string
 
-    >>> text_indentation(None)
-    Traceback (most recent call last):
-    TypeError: text must be a string
+
+    >>> text_indentation("Hello\n\nThere.")
+    Hello
+    <BLANKLINE>
+    There.
+    <BLANKLINE>
