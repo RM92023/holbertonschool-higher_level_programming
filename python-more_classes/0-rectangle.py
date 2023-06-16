@@ -1,3 +1,8 @@
 #!/usr/bin/python3
+"""Define class Rectangle"""
+
+
 class Rectangle:
-    pass
+    """Construct"""
+    def __init__(self):
+        pass
