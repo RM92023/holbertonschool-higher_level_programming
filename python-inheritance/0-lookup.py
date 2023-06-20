@@ -4,4 +4,4 @@
 
 def lookup(obj):
     """return the lookup table"""
-    print(dir(obj))
+    return(dir(obj))
