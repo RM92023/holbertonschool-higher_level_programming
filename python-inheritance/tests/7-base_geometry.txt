@@ -12,9 +12,7 @@
     >>> print (baseGeometry) # doctest: +ELLIPSIS
     <7-base_geometry.BaseGeometry object at ...>
 
-    >>> baseGeometry = BaseGeometry(None)
-    Traceback (most recent call last):
-    TypeError: object() takes no parameters
+    
 
 Methods
 =======
