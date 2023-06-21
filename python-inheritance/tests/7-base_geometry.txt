@@ -76,8 +76,13 @@ Test 12: value is string
     Traceback (most recent call last):
     TypeError: ...
 
+Test 13: value is boolean
+::
+    >>> bg.integer_validator("new", True) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    TypeError: ...
 
-Test 13: value is set
+Test 14: value is set
 ::
     >>> bg.integer_validator("new", {-7}) # doctest: +ELLIPSIS
     Traceback (most recent call last):
