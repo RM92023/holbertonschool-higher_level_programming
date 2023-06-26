@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 """define class rectangle with base class"""
 
 
@@ -17,66 +18,50 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    """get width"""
 
-"""get width"""
+    @property
+    def width(self):
+        return self.__width
 
+    """get height"""
 
-@property
-def width(self):
-    return self.__width
+    @property
+    def height(self):
+        return self.__height
 
+    """get x"""
 
-"""get height"""
+    @property
+    def x(self):
+        return self.__x
 
+    """get y"""
 
-@property
-def height(self):
-    return self.__height
+    @property
+    def y(self):
+        return self.__y
 
+    """setter width"""
 
-"""get x"""
+    @width.setter
+    def width(self, value):
+        self.__width = value
 
+    """setter height"""
 
-@property
-def x(self):
-    return self.__x
+    @height.setter
+    def height(self, value):
+        self.__height = value
 
+    """setter x"""
 
-"""get y"""
+    @x.setter
+    def x(self, value):
+        self.__x = value
 
+    """Setter y"""
 
-@property
-def y(self):
-    return self.__y
-
-
-"""setter width"""
-
-
-@width.setter
-def width(self, value):
-    self.__width = value
-
-
-"""setter height"""
-
-
-@height.setter
-def height(self, value):
-    self.__height = value
-
-
-"""setter x"""
-
-
-@x.setter
-def x(self, value):
-    self.__x = value
-
-
-"""Setter y"""
-
-
-@y.setter
-def y(self, value):
-    self.__y = value
+    @y.setter
+    def y(self, value):
+        self.__y = value
