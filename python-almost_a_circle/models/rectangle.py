@@ -55,7 +55,7 @@ def y(self):
 
 @width.setter
 def width(self, value):
-    self.width = value
+    self.__width = value
 
 
 """setter height"""
@@ -63,7 +63,7 @@ def width(self, value):
 
 @height.setter
 def height(self, value):
-    self.height = value
+    self.__height = value
 
 
 """setter x"""
@@ -71,7 +71,7 @@ def height(self, value):
 
 @x.setter
 def x(self, value):
-    self.x = value
+    self.__x = value
 
 
 """Setter y"""
@@ -79,4 +79,4 @@ def x(self, value):
 
 @y.setter
 def y(self, value):
-    self.y = value
+    self.__y = value
