@@ -4,20 +4,6 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
 
-    def multiples_args(self):
-        b1 = Rectangle()
-        b2 = Rectangle()
-        self.assertEqual(b1.id, b2.id - 1)
-
-        b3 = Rectangle()
-        self.assertEqual(b1.id, b2.id, b3.id - 2)
-
-        b1 = Rectangle(None)
-        b2 = Rectangle(None)
-        self.assertEqual(b1.id, b2.id - 1)
-
-        self.assertEqual(20, Rectangle().id)
-
     def test_rectangle_initialization(self):
         rect = Rectangle(5, 10)
         self.assertEqual(rect.width, 5)

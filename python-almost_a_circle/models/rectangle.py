@@ -85,4 +85,4 @@ class Rectangle(Base):
     """Adding Area to the rectangle"""
 
     def area(self):
-        return self.width * self.height
+        return self.__width * self.__height
