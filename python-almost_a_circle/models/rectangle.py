@@ -103,3 +103,18 @@ class Rectangle(Base):
         """print dimensions of the print rectangle"""
         dimensions = f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
         return f"[Rectangle] ({self.id}) " + dimensions
+
+    """Update the print rectangle"""
+
+    def update(self, *args):
+        """print dimensions of the print rectangle"""
+        if len(args) > 0:
+            self.id = args[0]
+        if len(args) > 1:
+            self.width = args[1]
+        if len(args) > 2:
+            self.height = args[2]
+        if len(args) > 3:
+            self.x = args[3]
+        if len(args) > 4:
+            self.y = args[4]
