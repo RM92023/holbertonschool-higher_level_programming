@@ -106,7 +106,7 @@ class Rectangle(Base):
 
     """Update the print rectangle"""
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """print dimensions of the print rectangle"""
         if len(args) > 0:
             self.id = args[0]
@@ -118,3 +118,16 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) > 4:
             self.y = args[4]
+
+        if len(args) == 0 or len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value

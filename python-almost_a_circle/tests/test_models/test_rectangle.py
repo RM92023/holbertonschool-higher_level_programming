@@ -61,13 +61,31 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (1) 2/3 - 4/5"
         self.assertEqual(str(rect), expected_output)
 
-    def test_rectangle_update(self):
+    def test_rectangle_update_with_args(self):
         rect = Rectangle(4, 5, 2, 3, 1)
         rect.update(2, 6, 7, 1, 4)
         self.assertEqual(rect.id, 2)
         self.assertEqual(rect.width, 6)
         self.assertEqual(rect.height, 7)
         self.assertEqual(rect.x, 1)
+        self.assertEqual(rect.y, 4)
+
+    def test_rectangle_update_with_kwargs(self):
+        rect = Rectangle(4, 5, 2, 3, 1)
+        rect.update(id=2, width=6, height=7, x=1, y=4)
+        self.assertEqual(rect.id, 2)
+        self.assertEqual(rect.width, 6)
+        self.assertEqual(rect.height, 7)
+        self.assertEqual(rect.x, 1)
+        self.assertEqual(rect.y, 4)
+
+    def test_rectangle_update_with_args_and_kwargs(self):
+        rect = Rectangle(4, 5, 2, 3, 1)
+        rect.update(2, width=6, height=7, y=4)
+        self.assertEqual(rect.id, 2)
+        self.assertEqual(rect.width, 6)
+        self.assertEqual(rect.height, 7)
+        self.assertEqual(rect.x, 2)
         self.assertEqual(rect.y, 4)
 
 
