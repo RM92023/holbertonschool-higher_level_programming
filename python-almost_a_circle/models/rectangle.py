@@ -94,3 +94,10 @@ class Rectangle(Base):
         """adding loops for the print rectangle"""
         for _ in range(self.__height):
             print("#" * self.__width)
+
+    """Adding __str__ to the print rectangle"""
+
+    def __str__(self):
+        """print dimensions of the print rectangle"""
+        dimensions = f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) " + dimensions
