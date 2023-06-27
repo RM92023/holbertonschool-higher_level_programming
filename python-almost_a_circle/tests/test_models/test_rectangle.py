@@ -47,6 +47,13 @@ class TestRectangle(unittest.TestCase):
         rect.height = 3
         self.assertEqual(rect.area(), 30)
 
+    def test_rectangle_display(self):
+        rect = Rectangle(5, 3)
+        expected_output = "#####\n#####\n#####\n"
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            rect.display()
+            self.assertEqual(fake_out.getvalue(), expected_output)
+
 
 if __name__ == '__main__':
     unittest.main()
