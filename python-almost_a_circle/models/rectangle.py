@@ -87,9 +87,9 @@ class Rectangle(Base):
     def area(self):
         """Add a new area to the rectangle"""
         return self.__width * self.__height
-    
 
     """Adding display # in the rectangle"""
+
     def display(self):
         """adding loops for the print rectangle"""
         for _ in range(self.__height):
