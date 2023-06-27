@@ -3,6 +3,7 @@ from models.rectangle import Rectangle
 from unittest.mock import patch
 import io
 
+
 class TestRectangle(unittest.TestCase):
 
     def test_rectangle_initialization(self):
@@ -49,11 +50,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.area(), 30)
 
     def test_rectangle_display(self):
-        rect = Rectangle(5, 3)
+        rect = Rectangle(5, 3, 2, 1)
         expected_output = "#####\n#####\n#####\n"
         with patch('sys.stdout', new=io.StringIO()) as fake_out:
             rect.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
+
+    def test_rectangle_str(self):
+        rect = Rectangle(4, 5, 2, 3, 1)
+        expected_output = "[Rectangle] (1) 2/3 - 4/5"
+        self.assertEqual(str(rect), expected_output)
 
 
 if __name__ == '__main__':
