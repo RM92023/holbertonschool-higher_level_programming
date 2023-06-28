@@ -51,3 +51,14 @@ class Square(Rectangle):
                     self.x = value
                 elif key == 'y':
                     self.y = value
+
+    """adding dictionary in the square"""
+
+    def to_dictionary(self):
+        """create dictionary"""
+        return {
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y
+        }
