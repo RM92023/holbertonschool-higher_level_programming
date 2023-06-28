@@ -131,3 +131,9 @@ class Rectangle(Base):
                     self.x = value
                 elif key == 'y':
                     self.y = value
+
+    """adding dictionary in the rectangle"""
+    def to_dictionary(self):
+        return {
+            
+        }
