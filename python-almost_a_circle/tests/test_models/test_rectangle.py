@@ -54,6 +54,13 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (1) 2/3 - 4/5"
         self.assertEqual(str(rect), expected_output)
 
+    def test_display(self):
+        rect = Rectangle(4, 5, 2, 3, 1)
+        expected_output = "\n\n\n  ####\n  ####\n  ####\n  ####\n  ####\n"
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            rect.display()
+            self.assertEqual(fake_out.getvalue(), expected_output)
+
     def test_rectangle_update_with_args(self):
         rect = Rectangle(4, 5, 2, 3, 1)
         rect.update(2, 6, 7, 1, 4)
