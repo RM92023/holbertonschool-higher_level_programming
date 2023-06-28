@@ -1,9 +1,10 @@
 import unittest
 from models.base import Base
+import json
 
 
 class TestBase(unittest.TestCase):
-    
+
     def test_base_id_generation(self):
         base1 = Base()
         base2 = Base()
@@ -43,6 +44,32 @@ class TestBase(unittest.TestCase):
     def test_base_from_json_string_with_data_returning_list(self):
         result = Base.from_json_string('[{"id": 89}]')
         self.assertIsInstance(result, list)
+
+
+class TestToJsonString(unittest.TestCase):
+    def test_to_json_string_empty_list(self):
+        # Prueba cuando se pasa una lista vacía
+        result = Base.to_json_string([])
+        self.assertEqual(result, "[]")
+
+    def test_to_json_string_none(self):
+        # Prueba cuando se pasa None como argumento
+        result = Base.to_json_string(None)
+        self.assertEqual(result, "[]")
+
+    def test_to_json_string_single_dict(self):
+        # Prueba cuando se pasa una lista con un solo diccionario
+        input_list = [{'name': 'John', 'age': 30}]
+        expected_result = json.dumps(input_list)
+        result = Base.to_json_string(input_list)
+        self.assertEqual(result, expected_result)
+
+    def test_to_json_string_multiple_dicts(self):
+        # Prueba cuando se pasa una lista con varios diccionarios
+        input_list = [{'name': 'John', 'age': 30}, {'name': 'Jane', 'age': 25}]
+        expected_result = json.dumps(input_list)
+        result = Base.to_json_string(input_list)
+        self.assertEqual(result, expected_result)
 
 
 if __name__ == '__main__':
