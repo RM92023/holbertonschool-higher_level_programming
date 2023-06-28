@@ -38,6 +38,30 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             square.size = "invalid"
 
+    def test_square_update_with_args(self):
+        square = Square(5, 2, 3, 1)
+        square.update(2, 7, 4, 5)
+        self.assertEqual(square.id, 2)
+        self.assertEqual(square.size, 7)
+        self.assertEqual(square.x, 4)
+        self.assertEqual(square.y, 5)
+
+    def test_square_update_with_kwargs(self):
+        square = Square(5, 2, 3, 1)
+        square.update(id=2, size=7, x=4, y=5)
+        self.assertEqual(square.id, 2)
+        self.assertEqual(square.size, 7)
+        self.assertEqual(square.x, 4)
+        self.assertEqual(square.y, 5)
+
+    def test_square_update_with_args_and_kwargs(self):
+        square = Square(5, 2, 3, 1)
+        square.update(2, size=7, x=4, y=5)
+        self.assertEqual(square.id, 2)
+        self.assertEqual(square.size, 7)
+        self.assertEqual(square.x, 4)
+        self.assertEqual(square.y, 5)
+
 
 if __name__ == '__main__':
     unittest.main()
