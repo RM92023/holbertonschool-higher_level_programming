@@ -81,6 +81,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 2)
         self.assertEqual(rect.y, 4)
 
+    def setUp(self):
+        # Configura los datos de prueba para cada caso
+        self.x = 10
+        self.y = 20
+        self.id = 1
+        self.height = 100
+        self.width = 200
+        self.obj = Rectangle(self.x, self.y, self.id, self.height, self.width)
+
+    def test_to_dictionary(self):
+        # Llama al método que deseas probar
+        result = self.obj.to_dictionary()
 
 if __name__ == '__main__':
     unittest.main()
