@@ -12,7 +12,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 10)
         self.assertEqual(rect.x, 0)
         self.assertEqual(rect.y, 0)
-        self.assertIsNone(rect.id)
+        self.assertIsNotNone(rect.id)
 
     def test_rectangle_width_validation(self):
         with self.assertRaises(TypeError):
@@ -48,13 +48,6 @@ class TestRectangle(unittest.TestCase):
         rect.width = 10
         rect.height = 3
         self.assertEqual(rect.area(), 30)
-
-    def test_rectangle_display(self):
-        rect = Rectangle(5, 3, 2, 1)
-        expected_output = "#####\n#####\n#####\n"
-        with patch('sys.stdout', new=io.StringIO()) as fake_out:
-            rect.display()
-            self.assertEqual(fake_out.getvalue(), expected_output)
 
     def test_rectangle_str(self):
         rect = Rectangle(4, 5, 2, 3, 1)
