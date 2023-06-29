@@ -2,6 +2,7 @@ import unittest
 from models.rectangle import Rectangle
 from unittest.mock import patch
 import io
+from io import StringIO
 
 
 class TestRectangle(unittest.TestCase):
@@ -65,6 +66,20 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(5, 1, 2, 4, 7)
         with self.assertRaises(TypeError):
             r.display(1)
+    
+    def test_rectangle_display_without_x_y(self):
+        rectangle = Rectangle(5, 3)
+        expected_output = "#####\n#####\n#####\n"
+        with unittest.mock.patch("sys.stdout", new_callable=StringIO) as mock_stdout:
+            rectangle.display()
+            self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_rectangle_display_without_y(self):
+        rectangle = Rectangle(5, 3, 2)
+        expected_output = "  #####\n  #####\n  #####\n"
+        with unittest.mock.patch("sys.stdout", new_callable=StringIO) as mock_stdout:
+            rectangle.display()
+            self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_rectangle_update_with_args(self):
         rect = Rectangle(4, 5, 2, 3, 1)
