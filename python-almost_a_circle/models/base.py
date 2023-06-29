@@ -52,7 +52,6 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of classes instantiated from a file of JSON strings."""
         filename = str(cls.__name__) + ".json"
         try:
             with open(filename, "r") as jsonfile:
