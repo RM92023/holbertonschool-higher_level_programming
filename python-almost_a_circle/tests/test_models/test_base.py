@@ -73,7 +73,8 @@ class TestToJsonString(unittest.TestCase):
         expected_result = json.dumps(input_list)
         result = Base.to_json_string(input_list)
         self.assertEqual(result, expected_result)
-    
+
+
 class TestBase_save_to_file(unittest.TestCase):
     """Unittests for testing save_to_file method of Base class."""
 
@@ -150,7 +151,7 @@ class TestBase_save_to_file(unittest.TestCase):
     def test_save_to_file_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Square.save_to_file([], 1)
-    
+
     def test_create_rectangle(self):
         dictionary = {'id': 1, 'width': 5, 'height': 10, 'x': 2, 'y': 3}
         rect = Rectangle.create(**dictionary)
@@ -160,6 +161,7 @@ class TestBase_save_to_file(unittest.TestCase):
         self.assertEqual(rect.height, 10)
         self.assertEqual(rect.x, 2)
         self.assertEqual(rect.y, 3)
+
     def test_create_square(self):
         dictionary = {'id': 2, 'size': 7, 'x': 4, 'y': 5}
         square = Square.create(**dictionary)
@@ -168,6 +170,36 @@ class TestBase_save_to_file(unittest.TestCase):
         self.assertEqual(square.size, 7)
         self.assertEqual(square.x, 4)
         self.assertEqual(square.y, 5)
+
+
+class TestSquare(unittest.TestCase):
+
+    def test_square_load_from_file(self):
+        square1 = Square(5, 2, 3, 1)
+        square2 = Square(7, 4, 5, 2)
+        squares = [square1, square2]
+
+        # Guardar los objetos Square en un archivo JSON
+        filename = "Square.json"
+        with open(filename, "w") as jsonfile:
+            jsonfile.write(Square.to_json_string(
+                [square.to_dictionary() for square in squares]))
+
+        # Cargar los objetos Square desde el archivo JSON
+        loaded_squares = Square.load_from_file()
+
+        # Verificar que se hayan cargado los objetos correctamente
+        self.assertEqual(len(loaded_squares), 2)
+        self.assertIsInstance(loaded_squares[0], Square)
+        self.assertIsInstance(loaded_squares[1], Square)
+        self.assertEqual(loaded_squares[0].id, square1.id)
+        self.assertEqual(loaded_squares[0].size, square1.size)
+        self.assertEqual(loaded_squares[0].x, square1.x)
+        self.assertEqual(loaded_squares[0].y, square1.y)
+        self.assertEqual(loaded_squares[1].id, square2.id)
+        self.assertEqual(loaded_squares[1].size, square2.size)
+        self.assertEqual(loaded_squares[1].x, square2.x)
+        self.assertEqual(loaded_squares[1].y, square2.y)
 
 
 if __name__ == '__main__':
