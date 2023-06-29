@@ -61,6 +61,11 @@ class TestRectangle(unittest.TestCase):
             rect.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
 
+    def test_display_one_arg(self):
+        r = Rectangle(5, 1, 2, 4, 7)
+        with self.assertRaises(TypeError):
+            r.display(1)
+
     def test_rectangle_update_with_args(self):
         rect = Rectangle(4, 5, 2, 3, 1)
         rect.update(2, 6, 7, 1, 4)
