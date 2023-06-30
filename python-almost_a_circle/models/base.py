@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Define the Base Class"""
 
+import turtle
+from turtle import *
+
 
 class Base:
     """constructor"""
@@ -59,3 +62,38 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        turtle.reset()
+        turtleDraw = turtle.Turtle()
+        turtleDraw.screen.bgcolor("#888888")
+        turtleDraw.pensize(3)
+
+        turtleDraw.color("#FFA500")
+        for rect in list_rectangles:
+            turtleDraw.showturtle()
+            turtleDraw.up()
+            turtleDraw.goto(rect.x, rect.y)
+            turtleDraw.down()
+            for i in range(2):
+                turtleDraw.forward(rect.width)
+                turtleDraw.left(90)
+                turtleDraw.forward(rect.height)
+                turtleDraw.left(90)
+            turtleDraw.hideturtle()
+
+        turtleDraw.color("#b5e3d8")
+        for square in list_squares:
+            turtleDraw.showturtle()
+            turtleDraw.up()
+            turtleDraw.goto(square.x, square.y)
+            turtleDraw.down()
+            for i in range(2):
+                turtleDraw.forward(square.width)
+                turtleDraw.right(-90)
+                turtleDraw.forward(square.height)
+                turtleDraw.right(-90)
+            turtleDraw.hideturtle()
+
+        turtle.exitonclick()
